@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 type user struct {
@@ -26,6 +28,8 @@ func main() {
 			w.Write([]byte(err.Error()))
 		}
 	})
+
+	http.Handle("/metrics", promhttp.Handler())
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

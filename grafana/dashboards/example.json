@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "panels": [
     {
@@ -54,7 +53,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "go_goroutines{job=\"prometheus\"}",
+          "expr": "go_goroutines{}",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
